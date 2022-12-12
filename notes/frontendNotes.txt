@@ -1,0 +1,11 @@
+what dependencies we are going to use in frontend?
+
+axios - to make api call.
+
+moment - library to work with time and date
+
+react-file-base64 - to convert our images.
+
+redux
+
+redux-thunk - asynchronous action using redux.

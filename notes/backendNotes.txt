@@ -1,0 +1,42 @@
+what is body-parser and why to use this?
+
+body-parser enable us to send post request.
+
+what is cors?
+
+it enable cross origin request.
+
+what happen if we don't use cors?
+
+what is express?
+
+express a framework for creating routing of our application.
+
+what is mongoose?
+
+mongoose to create modal for our posts.
+
+nodemon
+
+so, that we don't need to reset server manually when we do any change in server code.
+
+Stuff to do in backend.
+
+Connect to mongodb database
+Create a mongodb cluster
+Setup the modal
+And also create some documents
+
+
+mongoose schema
+
+with mongodb, we can create documents which absolutely look different.
+
+one can have message and title.
+
+and one can have only message.
+
+mongoose allow us to give some kind of uniformity.
+
+so, each post need to have these things.
+
