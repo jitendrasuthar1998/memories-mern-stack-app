@@ -1,12 +1,20 @@
 import { Typography, Paper, TextField, Button } from '@material-ui/core';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useStyles from './formStyle';
 import Filebase from 'react-file-base64';
-import { createPost } from '../../redux/actions/posts.action';
-import {useDispatch} from 'react-redux';
+import { createPost, getPosts, updatePost } from '../../redux/actions/posts.action';
+import { useDispatch, useSelector } from 'react-redux';
 
-export const Form = () => {
+
+export const Form = (props) => {
+    const { currentId, setCurrentId } = props;
+
     const classes = useStyles();
+    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
+
+    useEffect(() => {
+        if (post) setPostData(post);
+    }, [post])
 
     const dispatch = useDispatch()
     const [postData, setPostData] = useState({
@@ -15,11 +23,19 @@ export const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createPost(postData));
+        if (currentId) {
+            dispatch(updatePost(currentId, postData))
+            dispatch(getPosts());
+        }
+        else {
+            dispatch(createPost(postData));
+        }
+        clear();
     }
 
     const clear = () => {
-
+        setCurrentId(null);
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
     }
 
     console.log("postData is == ", postData)
@@ -27,7 +43,7 @@ export const Form = () => {
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant='h6'>Creating a memory</Typography>
+                <Typography variant='h6'>{currentId ? 'Editing' : 'Creating'} a memory</Typography>
                 <TextField name='creator' variant='outlined' label="Creator" fullWidth
                     value={postData.creator}
                     onChange={(e) => setPostData({ ...postData, creator: e.target.value })}
