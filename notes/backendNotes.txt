@@ -96,3 +96,25 @@ or how each entity will look like in database.
 each entity is like an object, and it will have key and value pairs.
 
 in models, we define that what we want to save in each entity.
+
+we can protect some routes by using authentication method.
+
+if req header has valid token, that time user can access that route.
+if user doesn't have valid token, that time user can't access particular route.
+
+while gettting data from req body or to create a new document, we can check that if user has entered correct data or not in form field.
+
+if user has entered correct data, only that time we can save it into database.
+
+if not, then we can send error message to user.
+
+so, we can validate request body.
+we can validate request params.
+
+in database, for each user, we can save user email and password in user document.
+
+but it is not good practice to save user password as simple character which anybody can see.
+
+so, to save password in database, we can convert password into hashed password to make our application secure from any malicious activity or person.
+
+This backend application is not fully scalable or handle multiple users request at one time.
