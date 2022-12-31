@@ -40,3 +40,59 @@ mongoose allow us to give some kind of uniformity.
 
 so, each post need to have these things.
 
+flow of api => 
+
+route -> middleware -> controller
+
+controller contains the logic of route or what thing should happen, from where to collect data, or where to save data.
+controller have access to database.
+and controller save data to database.
+controller update data to database.
+controller gets data fron database.
+controller delete data from database.
+
+whole application route's logic or particular route logic will go into its own controller.
+
+in large application, we have to create many apis for different purpose.
+there will be many routes, many controllers, many mod
+like 
+
+there can be many collections in database, but there will be only one database.
+
+in models, we define the schema or the format in which we want to save data of one post, or one product or one order or one user in their respective collection.
+
+send all products from database to frontend
+save a new product to products collection.
+update a product to products collection.
+delete a product from products collection.
+
+to do operation on product document or related to product, we need to create product route.
+
+if we want to save or delete, or update, or read or get user from database, then we have to create user route.
+
+router.get("/", getAllUsers)
+router.get("/:id", getUser);
+router.delete("/:id", deleteUser);
+router.patch("/:id", updateUser);
+
+here, getAllUsers, getUser, deleteUser, updateUser are controllers.
+
+so, this will be the structure of productRoute file.
+
+if there are many entities in application, like 
+
+1. tender
+2. order 
+3. contractor
+4. banner
+5. office
+6. consultant
+7. class
+
+then we have to define that what we want to save in each object or document.
+
+or how each entity will look like in database.
+
+each entity is like an object, and it will have key and value pairs.
+
+in models, we define that what we want to save in each entity.
