@@ -10,7 +10,7 @@ export const getPosts = () => async (dispatch) => {
         const action = { type: FETCH_ALL, payload: data }
         dispatch(action)
     } catch (error) {
-        console.log("error at getPosts action", error.message);
+        console.log("error at getPosts action", error);
     }
 }
 
