@@ -59,7 +59,7 @@ In Posts sections, user can see all available posts in this application.
 
 * Before starting the backend of this application, you must have to add your own mongodb connection string.
 
-* To connect your application to mongodb, just create a <code>.env</code> file in server folder. And in that folder add a variable name <code>CONNECTION_STRING</code> and give it your mongo db connection string.
+* To connect your application to mongodb, just create a <code>.env</code> file in server folder. And in that folder add a variable name <code>CONNECTION_URL</code> and give it your mongo db connection string.
 
 * Now your application is ready to start.
 
