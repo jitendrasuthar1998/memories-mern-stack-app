@@ -3,7 +3,6 @@ import { CREATE, DELETE, FETCH_ALL, LIKE, UPDATE } from "../../constants/actionT
 const reducer = (posts = [], action) => {
     switch (action.type) {
         case FETCH_ALL:
-            // console.log("fetch all reducer called")
             return action.payload;
 
         case CREATE:

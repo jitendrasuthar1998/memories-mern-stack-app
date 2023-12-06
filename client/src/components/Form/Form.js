@@ -42,9 +42,11 @@ export const Form = (props) => {
 
     return (
         <Paper className={classes.paper}>
-            <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+            <form autoComplete="off" className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+                
                 <Typography variant='h6'>{currentId ? 'Editing' : 'Creating'} a memory</Typography>
-                <TextField name='creator' variant='outlined' label="Creator" fullWidth
+
+                <TextField name='creator' variant='outlined' label="Creator" fullWidth required
                     value={postData.creator}
                     onChange={(e) => setPostData((prevState) => ({
                         ...prevState, creator: e.target.value
@@ -52,13 +54,13 @@ export const Form = (props) => {
                 />
 
                 <TextField name='title' variant='outlined' label="Title" fullWidth
-                    value={postData.title}
+                    value={postData.title} required
                     onChange={(e) => setPostData((prevState) => ({
                         ...prevState, title: e.target.value
                     }))}
                 />
 
-                <TextField name='message' variant='outlined' label="Messsage" fullWidth
+                <TextField name='message' variant='outlined' label="Messsage" fullWidth required
                     value={postData.message}
                     onChange={(e) => setPostData((prevState) => ({
                         ...prevState, message: e.target.value
@@ -66,7 +68,7 @@ export const Form = (props) => {
                 />
 
                 <TextField name='tags' variant='outlined' label="Tags" fullWidth
-                    value={postData.tags}
+                    value={postData.tags} required
                     onChange={(e) => setPostData((prevState) => (
                         { ...prevState, tags: e.target.value.split(",") }
                     ))}

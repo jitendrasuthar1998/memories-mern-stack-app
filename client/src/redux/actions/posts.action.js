@@ -3,6 +3,8 @@ import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../../constants/actionT
 
 // action creators
 
+// action to get all posts
+
 export const getPosts = () => async (dispatch) => {
 
     try {
@@ -14,6 +16,8 @@ export const getPosts = () => async (dispatch) => {
     }
 }
 
+// action to create post
+
 export const createPost = (post) => async (dispatch) => {
     try {
         const { data } = await api.createPost(post);
@@ -22,6 +26,8 @@ export const createPost = (post) => async (dispatch) => {
         console.log(error);
     }
 }
+
+// action to update a post
 
 export const updatePost = (id, post) => async (dispatch) => {
     try {
@@ -33,6 +39,8 @@ export const updatePost = (id, post) => async (dispatch) => {
     }
 }
 
+// action to delete a post
+
 export const deletePost = (id) => async (dispatch) => {
     try {
         await api.deletePost(id);
@@ -41,6 +49,8 @@ export const deletePost = (id) => async (dispatch) => {
         console.log(error)
     }
 }
+
+// action to like a post
 
 export const likePost = (id) => async (dispatch) => {
     try {
