@@ -28,6 +28,7 @@ In Posts sections, user can see all available posts in this application.
 * Moment
 * React File Base 64
 * Redux
+* Axios
 
 ### Backend
 * Cors
