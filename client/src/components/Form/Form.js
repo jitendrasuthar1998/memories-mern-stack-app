@@ -1,15 +1,15 @@
-import { Typography, Paper, TextField, Button } from '@material-ui/core';
 import React, { useState, useEffect } from 'react'
+import { Typography, Paper, TextField, Button } from '@material-ui/core';
 import useStyles from './formStyle';
 import Filebase from 'react-file-base64';
 import { createPost, getPosts, updatePost } from '../../redux/actions/posts.action';
 import { useDispatch, useSelector } from 'react-redux';
 
-
 export const Form = (props) => {
     const { currentId, setCurrentId } = props;
 
     const classes = useStyles();
+    
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
 
     useEffect(() => {
@@ -17,10 +17,12 @@ export const Form = (props) => {
     }, [post])
 
     const dispatch = useDispatch()
+    
     const [postData, setPostData] = useState({
         creator: '', title: '', message: '', tags: '', selectedFile: ''
     });
 
+    // function to upload a post
     const handleSubmit = (e) => {
         e.preventDefault();
         if (currentId) {
@@ -33,12 +35,11 @@ export const Form = (props) => {
         clear();
     }
 
+    // function to clear form data
     const clear = () => {
         setCurrentId(null);
         setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
     }
-
-    console.log("postData is == ", postData)
 
     return (
         <Paper className={classes.paper}>

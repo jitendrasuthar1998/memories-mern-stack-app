@@ -41,7 +41,7 @@ export const updatePost = async (req, res) => {
     const { id: _id } = req.params;
     const post = req.body
 
-    console.log("id at updatePost is == ", _id);
+    // console.log("id at updatePost is == ", _id);
 
     //checking if id is valid mongoose id or not.
     // if id is not valid mongoose id, then return an error.
