@@ -4,7 +4,7 @@
 This is a very simple application where you can save their memories as a post, like you do in Instagram and Facebook application.
 
 ### Screenshot
-[![memories-mern-stack-app.png](https://i.postimg.cc/x895h2D1/memories-mern-stack-app.png)](https://postimg.cc/PpF1v05g)
+<img src="https://i.postimg.cc/x895h2D1/memories-mern-stack-app.png" style="max-width:100%" alt="memories-app">
 
 ## Sections
 There are two sections present in this application.
