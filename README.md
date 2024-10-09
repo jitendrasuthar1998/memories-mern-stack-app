@@ -1,7 +1,3 @@
-Here is your updated README file for the **Memories Application**:
-
----
-
 # Memories Application
 
 ## Introduction
